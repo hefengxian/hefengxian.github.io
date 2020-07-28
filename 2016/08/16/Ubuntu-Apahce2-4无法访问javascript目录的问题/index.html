@@ -1,0 +1,671 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Ubuntu,Apache2.4,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="𝓕𝓻𝓪𝓷𝓴.𝓗's blog" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="问题描述今天调试一个项目，项目放在webroot下面的javascript目录，无论怎么设置都是403 You don&amp;#39;t have permission to access /javascript/ on this server.">
+<meta name="keywords" content="Ubuntu,Apache2.4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu Apahce2.4无法访问javascript目录的问题">
+<meta property="og:url" content="https://hefengxian.github.io/2016/08/16/Ubuntu-Apahce2-4无法访问javascript目录的问题/index.html">
+<meta property="og:site_name" content="𝓕𝓻𝓪𝓷𝓴.𝓗&#39;s blog">
+<meta property="og:description" content="问题描述今天调试一个项目，项目放在webroot下面的javascript目录，无论怎么设置都是403 You don&amp;#39;t have permission to access /javascript/ on this server.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-27T09:57:42.150Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu Apahce2.4无法访问javascript目录的问题">
+<meta name="twitter:description" content="问题描述今天调试一个项目，项目放在webroot下面的javascript目录，无论怎么设置都是403 You don&amp;#39;t have permission to access /javascript/ on this server.">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://hefengxian.github.io/2016/08/16/Ubuntu-Apahce2-4无法访问javascript目录的问题/">
+
+  <title> Ubuntu Apahce2.4无法访问javascript目录的问题 | 𝓕𝓻𝓪𝓷𝓴.𝓗's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">𝓕𝓻𝓪𝓷𝓴.𝓗's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">精力分配决定层次</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tool">
+          <a href="/tool" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br>
+            
+            小工具
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ubuntu Apahce2.4无法访问javascript目录的问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-16T14:29:46+08:00" content="2016-08-16">
+              2016-08-16
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日常笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">日常笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>今天调试一个项目，项目放在<code>webroot</code>下面的<code>javascript</code>目录，无论怎么设置都是<code>403 You don&#39;t have permission to access /javascript/ on this server.</code></p>
+<a id="more"></a>
+<h4 id="思考过程"><a href="#思考过程" class="headerlink" title="思考过程"></a>思考过程</h4><p>首先第一反应，Google了错误<code>You don&#39;t have permission to access /javascript/ on this server.</code>，然后发现大部分答案都说到了配置文件中的<code>Directory</code>设置。比如
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;Directory /&gt;</span></span><br><span class="line">   <span class="attribute"><span class="nomarkup">Options</span></span> FollowSymLinks</span><br><span class="line">   <span class="attribute">AllowOverride</span> <span class="literal">All</span></span><br><span class="line">   <span class="attribute"><span class="nomarkup">Order</span></span> deny,allow</span><br><span class="line">   <span class="attribute"><span class="nomarkup">Allow</span></span> from <span class="literal">all</span></span><br><span class="line"><span class="section">&lt;/Directory&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>而我并不是整个<code>webroot</code>都不能访问，其他所有的文件夹都可以访问，就是目录<code>javascript</code>文件夹没有权限访问，我的设置是
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">&lt;Directory /home/hfx/workspace/&gt;</span></span><br><span class="line">       <span class="attribute"><span class="nomarkup">Options</span></span> Indexes FollowSymLinks</span><br><span class="line"><span class="comment">#       AllowOverride None</span></span><br><span class="line">       <span class="attribute">AllowOverride</span> <span class="literal">All</span></span><br><span class="line">       <span class="attribute">Require</span> <span class="literal">all</span> granted</span><br><span class="line"><span class="section">&lt;/Directory&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>所以按理来说也是没有问题的，可以单单就是<code>javascript</code>目录无法访问，并且我尝试重新给<code>javascript</code>目录设置权限
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 -R javascript</span><br></pre></td></tr></table></figure></p>
+<p>然而还是并没有什么卵用，于是我尝试更改<code>javascript</code>变成<code>javaScript</code>或者新建其他的名字的文件夹，而它们均可以正常访问，所以猜想症结应该是那里的配置禁止了web根路径下名字为<code>javascript</code>的路径。</p>
+<h4 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h4><p>于是我看apache的所有配置文件，打开<code>/etc/apache2/conf-enable/</code>目录，发现了一个名为<code>javascript-common.conf</code>的配置文件，打开一看
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Alias /javascript <span class="meta-keyword">/usr/</span>share<span class="meta-keyword">/javascript/</span></span><br><span class="line"></span><br><span class="line"><span class="params">&lt;Directory "/usr/share/javascript/"&gt;</span></span><br><span class="line">       Options FollowSymLinks MultiViews</span><br><span class="line"><span class="params">&lt;/Directory&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>其实我并不知道具体是什么意思，可是从字面意思大概看出，配置里面指定了一个别名<code>/javascript</code>到目录<code>/usr/share/javascript/</code>，应该访问<code>/javascript</code>就变成了访问目录<code>/usr/share/javascript/</code>而不是我们在web根目录下创建的<code>javascript</code>目录。</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>于是google一下<code>javascript-common.conf</code>，这才发现了很多真正与此相关的问题，所以真正的解决方案有很多种，有的直接修改别名的名称为<code>/javascript-common</code>，而我觉得最好的解决方案应该是</p>
+<blockquote>
+<p>You don’t need to edit the conf file or purge the package just disable it.</p>
+<pre><code>a2disconf javascript-common
+service apache2 reload
+</code></pre><p>If for some reason you want to use that conf:</p>
+<pre><code>a2enconf javascript-common
+service apache2 reload
+</code></pre></blockquote>
+<p>另外解释一下<code>a2disconf</code>和<code>a2enconf</code>的作用，官方的介绍是</p>
+<blockquote>
+<p>a2enconf, a2disconf - enable or disable an apache2 configuration file</p>
+</blockquote>
+<p>从介绍就直接明了它的作用了。快捷的启用或者禁用一个apache模块。</p>
+<p>另外还有类似的几个命令：</p>
+<ul>
+<li>apache2ctl - Apache HTTP server control interface</li>
+<li>a2enmod, a2dismod - enable or disable an apache2 module</li>
+</ul>
+<h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
+<li><a href="http://stackoverflow.com/questions/21706067/apache-doesnt-serve-files-in-javascript-directory-why" target="_blank" rel="noopener">Apache doesn’t serve files in “javascript” directory. Why?</a></li>
+<li><a href="http://manpages.ubuntu.com/manpages/trusty/man8/a2enconf.8.html" target="_blank" rel="noopener">a2enconf</a></li>
+<li><a href="http://manpages.ubuntu.com/manpages/trusty/man8/apache2ctl.8.html" target="_blank" rel="noopener">apache2ctl</a></li>
+<li><a href="http://manpages.ubuntu.com/manpages/trusty/man8/a2dismod.8.html" target="_blank" rel="noopener">a2dismod</a></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
+          
+            <a href="/tags/Apache2-4/" rel="tag">#Apache2.4</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/16/16-04安装PHP7/" rel="next" title="Ubuntu 16.04安装PHP7">
+                <i class="fa fa-chevron-left"></i> Ubuntu 16.04安装PHP7
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/17/ItA-Chapter-01算法在计算中的作用/" rel="prev" title="第一章 算法在计算中的作用">
+                第一章 算法在计算中的作用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="𝓕𝓻𝓪𝓷𝓴.𝓗">
+          <p class="site-author-name" itemprop="name">𝓕𝓻𝓪𝓷𝓴.𝓗</p>
+          <p class="site-description motion-element" itemprop="description">自我救赎中...</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思考过程"><span class="nav-number">2.</span> <span class="nav-text">思考过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#发现问题"><span class="nav-number">3.</span> <span class="nav-text">发现问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决方案"><span class="nav-number">4.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">𝓕𝓻𝓪𝓷𝓴.𝓗</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+         processEscapes: true,
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,656 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Ubuntu,Linux,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="𝓕𝓻𝓪𝓷𝓴.𝓗's blog" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.png?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="Linux有太多的命令，很多经常用却没有记住；这里统一收集一下平常用到的一些命令">
+<meta name="keywords" content="Ubuntu,Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 常用命令记录">
+<meta property="og:url" content="https://hefengxian.github.io/2016/11/22/Ubuntu-常用命令记录/index.html">
+<meta property="og:site_name" content="𝓕𝓻𝓪𝓷𝓴.𝓗&#39;s blog">
+<meta property="og:description" content="Linux有太多的命令，很多经常用却没有记住；这里统一收集一下平常用到的一些命令">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-27T09:57:42.150Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu 常用命令记录">
+<meta name="twitter:description" content="Linux有太多的命令，很多经常用却没有记住；这里统一收集一下平常用到的一些命令">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://hefengxian.github.io/2016/11/22/Ubuntu-常用命令记录/">
+
+  <title> Ubuntu 常用命令记录 | 𝓕𝓻𝓪𝓷𝓴.𝓗's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">𝓕𝓻𝓪𝓷𝓴.𝓗's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">精力分配决定层次</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tool">
+          <a href="/tool" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br>
+            
+            小工具
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ubuntu 常用命令记录
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-22T10:09:38+08:00" content="2016-11-22">
+              2016-11-22
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/日常笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">日常笔记</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Linux有太多的命令，很多经常用却没有记住；这里统一收集一下平常用到的一些命令</p>
+<a id="more"></a>
+<h3 id="查看文件详情"><a href="#查看文件详情" class="headerlink" title="查看文件详情"></a>查看文件详情</h3><p>一般用<code>ls</code>可以查看文件<code>la</code>（<code>ls -A</code>的别名）查看所有文件；但是一老没记住怎么查看文件的大小啊、权限啊什么的鬼；通过查看帮助<code>ls --help</code>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看详情（帮助解释为：使用较长格式列出信息）</span></span><br><span class="line">ls -l</span><br></pre></td></tr></table></figure></p>
+<p>但是这样有个问题，文件的大小是使用Byte为单位的，根本无法直接看出一个文件有多大；如果我们想要更好的可读性呢？
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -h 帮助解释为：--human-readable with -l and/or -s, print human readable sizes (e.g., 1K 234M 2G)</span></span><br><span class="line">ls -lh</span><br></pre></td></tr></table></figure></p>
+<h3 id="设置别名"><a href="#设置别名" class="headerlink" title="设置别名"></a>设置别名</h3><p>比如我知道了<code>ls -lhA</code>很好使，我但是每次都输入这么多参数很不方便，那么我们怎么是其简单化呢？就像<code>la</code>一样；我们先看一下用户主目录下的<code>.bashrc</code>文件<code>sudo  vim ~/.bashrc</code>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># some more ls aliases</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -alF'</span></span><br><span class="line"><span class="built_in">alias</span> la=<span class="string">'ls -A'</span></span><br><span class="line"><span class="built_in">alias</span> l=<span class="string">'ls -CF'</span></span><br></pre></td></tr></table></figure></p>
+<p>看到这里应该明白怎么回事了，所以依葫芦画瓢，在上诉位置追加如下的命令，保存
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">alias</span> lh=<span class="string">'ls -lhA'</span></span><br></pre></td></tr></table></figure></p>
+<p>立即使用<code>lh</code>发现并没有什么用，因为<code>.bashrc</code>是启动时加载的，所以我们手动加载一下
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>现在用就看到效果了。
+另外，设置别名的时候要注意有没有冲突，一个简单粗暴的验证方法是直接在命令行中输入你要准备使用的别名，如果还没使用，那么会提示你。</p>
+<h3 id="查看路由表"><a href="#查看路由表" class="headerlink" title="查看路由表"></a>查看路由表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">netstat -r</span><br><span class="line"></span><br><span class="line">内核 IP 路由表</span><br><span class="line">Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface</span><br><span class="line">0.0.0.0         192.168.1.1     0.0.0.0         UG        0 0          0 enp2s0</span><br><span class="line">0.0.0.0         192.168.2.1     0.0.0.0         UG        0 0          0 enp2s0</span><br><span class="line">169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 docker0</span><br><span class="line">172.17.0.0      0.0.0.0         255.255.0.0     U         0 0          0 docker0</span><br><span class="line">192.168.1.0     0.0.0.0         255.255.255.0   U         0 0          0 enp2s0</span><br><span class="line">192.168.2.0     0.0.0.0         255.255.255.0   U         0 0          0 enp2s0</span><br></pre></td></tr></table></figure>
+<p>其他选项可以使用<code>netstat --help</code></p>
+<h3 id="删除和设置默认网关"><a href="#删除和设置默认网关" class="headerlink" title="删除和设置默认网关"></a>删除和设置默认网关</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除默认路由</span></span><br><span class="line">sudo route del default</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置默认路由</span></span><br><span class="line">sudo route add default gw 192.168.x.1</span><br></pre></td></tr></table></figure>
+<h3 id="Ubuntu桌面版的IP设置"><a href="#Ubuntu桌面版的IP设置" class="headerlink" title="Ubuntu桌面版的IP设置"></a>Ubuntu桌面版的IP设置</h3><p>现在网上的Ubuntu IP设置教程，一般都是在Server版下的；然而桌面版的除了使用图形界面设置，如果要想直接编辑对应的配置文件呢？</p>
+<p>一般Server版的IP设置都在<code>/etc/network</code>目录下（当然桌面版也有），而桌面版除了这个还有另外的设置在目录<code>/etc/network</code>；在界面上设置的内容都是保存在这个目录下的。</p>
+<p>比如我们打开主要的配置文件目录<code>/etc/NetworkManager/system-connections/</code>，里面可能有你设置的VPN，有线连接等等，一般我们都是默认叫有线连接，当然我们也可以叫其他的名字，你只要改一下这个配置文件名，那么你会看到右上角的网络里的名字页对于的改了</p>
+<p>一般里面的内容都是类似如下的配置（文件是只读的，需要管理员权限），我们可以更改我们想改的配置。
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[connection]</span><br><span class="line">id=wired</span><br><span class="line">uuid=5b6d5907-3636-401c-a4a0-cf0cc473f306</span><br><span class="line"><span class="built_in">type</span>=ethernet</span><br><span class="line">autoconnect-priority=-999</span><br><span class="line">permissions=</span><br><span class="line">secondaries=</span><br><span class="line">timestamp=1480391347</span><br><span class="line"></span><br><span class="line">[ethernet]</span><br><span class="line">duplex=full</span><br><span class="line">mac-address=B0:83:FE:BA:A0:1D</span><br><span class="line">mac-address-blacklist=</span><br><span class="line"></span><br><span class="line">[ipv4]</span><br><span class="line">address1=192.168.1.45/24,192.168.1.1</span><br><span class="line">address2=192.168.2.45/24,192.168.2.1</span><br><span class="line">dns=202.96.134.33;</span><br><span class="line">dns-search=</span><br><span class="line">method=manual</span><br><span class="line"></span><br><span class="line">[ipv6]</span><br><span class="line">addr-gen-mode=stable-privacy</span><br><span class="line">dns-search=</span><br><span class="line">ip6-privacy=0</span><br><span class="line">method=auto</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
+          
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/22/TCP-IP详解第一章/" rel="next" title="《TCP/IP详解》第一章 概述">
+                <i class="fa fa-chevron-left"></i> 《TCP/IP详解》第一章 概述
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/13/ES6学习笔记/" rel="prev" title="ES6学习笔记">
+                ES6学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/avatar.jpg" alt="𝓕𝓻𝓪𝓷𝓴.𝓗">
+          <p class="site-author-name" itemprop="name">𝓕𝓻𝓪𝓷𝓴.𝓗</p>
+          <p class="site-description motion-element" itemprop="description">自我救赎中...</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">32</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看文件详情"><span class="nav-number">1.</span> <span class="nav-text">查看文件详情</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置别名"><span class="nav-number">2.</span> <span class="nav-text">设置别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看路由表"><span class="nav-number">3.</span> <span class="nav-text">查看路由表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除和设置默认网关"><span class="nav-number">4.</span> <span class="nav-text">删除和设置默认网关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu桌面版的IP设置"><span class="nav-number">5.</span> <span class="nav-text">Ubuntu桌面版的IP设置</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">𝓕𝓻𝓪𝓷𝓴.𝓗</span>
+</div>
+
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+         processEscapes: true,
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
